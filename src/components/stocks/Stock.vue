@@ -13,11 +13,12 @@
             <input type="number"
                    class="form-control"
                    placeholder="Quantity"
-                   v-model="quantity">
+                   v-model.number="quantity">
           </div>
           <div class="p-2">
             <button class="btn btn-success"
                     @click="buyStock"
+                    :disabled="quantity <= 0 || !Number.isInteger(quantity)"
                     >Buy</button>
           </div>
         </div>
